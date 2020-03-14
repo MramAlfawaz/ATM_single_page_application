@@ -3,30 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
     <title>ATM Interface</title>
 </head>
 <body>
     <!-- Home screen, this screen is for insert card -->
 
     <div id="screen__pin">
+            
+        <div class="PIN">
+                <div class="" id="input">
+                  <p style="color: rgb(63, 60, 60); text-align: center;">write PIN numbers by keyboard</p>
+                   <input class="input" id="input" maxlength="4" type="password" 
+                   placeholder="writr your PIN" value="1234">  
+                </div>
 
+                <p id="msg" style="color: red;"></p>
+
+
+                <div class="buttons">
+                 
+                  <div class="leftPanel">
+                    <div class="numbers">
+                        <div class="btn">1</div>
+                        <div class="btn">2</div>
+                        <div class="btn">3</div>
+                        <div id="cancel">Cancel</div>
+                    </div>
+
+                    <div class="numbers">
+                      <div class="btn">4</div>
+                      <div class="btn">5</div>
+                      <div class="btn">6</div>
+                      <div id="edit">Edit</div>
+                    </div>
+
+                    <div class="numbers">
+                      <div class="btn">7</div>
+                      <div class="btn">8</div>
+                      <div class="btn">9</div>
+                       <div id="enter">
+                        <button id="enter" onclick="validationFun(), balance()">Enter</button>
+                    </div>
+                    </div>
+
+                    <div class="numbers">
+                      <div class="btn">0</div>
+                    </div>
+                  </div>
+
+                </div>
+
+        </div>
+<div id="logi">
+    <img class="image" src="https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fi.forbesimg.com%2Fmedia%2Flists%2Fcompanies%2Fal-rajhi-bank_416x416.jpg" alt="" srcset="">
+</div>
     </div>
     
     <div id="screen__landing">
+        <p style="font-family: serif;">Good morning maram, how are you today?</p>
+
+        <main>
+            <div class="initBalance" id="initBalance" style="font-size: 80px; background-color: orange; color: white;  text-align: center; ">  </div>
+            <div class="balancelan"> 
+                <button class="balancelan" onclick="checkbalance()">Balance</button>
+ 
+            </div>
+
+    <div class="operations">
+
+        <div class="withdraw"> 
+            <button class="withdraw" onclick="towithdraw()">withdraw</button>
+
+        </div>
+
+        <div class="deposit">
+            <button class="deposit" onclick="todeposit()">Deposit</button>
+        </div>
+            
+        </div>
 
     </div>
     
+</main>
+
     <div id="screen__withdrawal">
 
+        <h2>Withdrawal</h2>
+        <h2>SAR 10000</h2>
+        <p class="pwith" style="font-family: serif; color: red;" >
+            write number by keyboard  </p>
+
+        <div class="PIN">
+            <div class="input" id="input" style="width: 270px;">
+                <input class="input" id="amount" type="number" > 
+            </div>
+            <div class="buttons">
+             
+              <div class="leftPanel">
+                <div class="numbers">
+                    <div class="btn">1</div>
+                    <div class="btn">2</div>
+                    <div class="btn">3</div>
+                </div>
+
+                <div class="numbers">
+                  <div class="btn">4</div>
+                  <div class="btn">5</div>
+                  <div class="btn">6</div>
+                </div>
+
+                <div class="numbers">
+                  <div class="btn">7</div>
+                  <div class="btn">8</div>
+                  <div class="btn">9</div>
+                </div>
+
+                <div class="numbers">
+                  <div class="btn">0</div>
+                </div>
+              </div>
+
+            </div>
+
+    </div>
+    <button class="do" id="do" onclick="" > Enter </button>
+    <button class="cls" onclick="closeFun() , balance()" > close </button>
     </div>
 
     <div id="screen__deposit">
+        <h2>Deposit</h2>
+        <p>write number by keyboard</p>
+
+        <div class="PIN">
+            <div class="input" id="input" style="width: 270px;">
+                <input class="input" id="depos" type="number" maxlength="10"> 
+
+            </div>
+            <div class="buttons">
+             
+              <div class="leftPanel">
+                <div class="numbers">
+                    <div class="btn">1</div>
+                    <div class="btn">2</div>
+                    <div class="btn">3</div>
+                </div>
+
+                <div class="numbers">
+                  <div class="btn">4</div>
+                  <div class="btn">5</div>
+                  <div class="btn">6</div>
+                </div>
+
+                <div class="numbers">
+                  <div class="btn">7</div>
+                  <div class="btn">8</div>
+                  <div class="btn">9</div>
+                </div>
+
+                <div class="numbers">
+                  <div class="btn">0</div>
+                </div>
+              </div>
+
+            </div>
 
     </div>
-    <div id="screen__balance">
+    <button class="do" id="doDepos" onclick="" > Enter </button>
 
-    </div>
+    <button class="cls" onclick="closeFun(), balance()" > close </button>
+</div>
 
+
+    <div id="screen__balance" style="background-color: navy; ">
+
+        <p style="font-family: serif;">Good morning maram, how are you today?</p>
+
+        <main>
+
+         <h4 style="color: white; font-family: serif; margin-right: 90px;"> Balance </h4> 
+
+<div class="fifty" id="balanceAmount" style="font-size: 80px; background-color: orange; color: white;  text-align: center; ">  </div>
     
+</main>
+<button class="cls" onclick="closeFun()" > close </button>
+
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/jQuery.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
